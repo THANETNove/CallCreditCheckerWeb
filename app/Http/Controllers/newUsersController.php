@@ -39,6 +39,7 @@ class newUsersController extends Controller
         ->where('username', 'like', "$search%")
         ->orderBy('id','DESC')
         ->paginate(2);
+        
         return view('home',['data' => $data,'data2'=> $data2]);
     }
 

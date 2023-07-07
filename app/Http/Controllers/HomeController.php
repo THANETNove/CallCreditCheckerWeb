@@ -30,6 +30,7 @@ class HomeController extends Controller
         ->where('status_login',NULL)
         ->orderBy('id','DESC')
         ->paginate(2);
+        
         $data2 = DB::table('users')
         ->where('status',0)
         ->where('status_login',1)
