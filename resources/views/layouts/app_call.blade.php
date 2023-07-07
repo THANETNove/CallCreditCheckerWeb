@@ -8,11 +8,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Call Credit Checker</title>
 
     <!-- Fonts -->
     <link rel="shortcut icon" type="image/png" href="{{ URL::asset('/assets/images/logos/favicon.png')}}" />
     <link rel="stylesheet" href="{{ URL::asset('assets/css/styles.css')}}" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -26,7 +29,10 @@
     <script src="{{ URL::asset('/assets/js/app.min.js')}}"></script>
     <script src="{{ URL::asset('/assets/libs/apexcharts/dist/apexcharts.min.js')}}"></script>
     <script src="{{ URL::asset('/assets/libs/simplebar/dist/simplebar.js')}}"></script>
-    <script src="{{ URL::asset('/assets/js/dashboard.js')}}"></script> -->
+    <script src="{{ URL::asset('/assets/js/dashboard.js')}}"></script>
+ -->
+
+</body>
 
 </body>
 
