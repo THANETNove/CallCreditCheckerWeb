@@ -28,6 +28,7 @@
                                 @if (session('message'))
                                 <p class="col-4 add-name" id="add-name">{{ session('message') }}</p>
                                 @endif
+                                <p class="col-4 add-name" id="add-copy"></p>
                             </div>
                             <div class="table-responsive ">
                                 <h6 class="card-title fw-semibold mb-4">User ใหม่</h6>
@@ -164,17 +165,16 @@ copyBtns.forEach(copyBtn => {
         tempInput.select();
         document.execCommand('copy');
         document.body.removeChild(tempInput);
-        alert('คัดลอกข้อความสำเร็จ');
+        /*   alert('คัดลอกข้อความสำเร็จ'); */
+        var paragraph = document.getElementById("add-copy");
+        var text = document.createTextNode("คัดลอกข้อความสำเร็จ");
+        paragraph.appendChild(text);
 
         // ซ่อน Alert หลังจาก 3 วินาที (3000 มิลลิวินาที)
         setTimeout(() => {
-            const alerts = document.querySelectorAll('.alert');
-            alerts.forEach(alert => {
-                alert.style.display = 'none';
-            });
-
-            console.log("5555");
-        }, 3000);
+            var textNode = paragraph.firstChild;
+            paragraph.removeChild(textNode);
+        }, 1000);
     });
 });
 </script>
