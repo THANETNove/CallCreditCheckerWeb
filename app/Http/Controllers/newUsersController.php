@@ -49,8 +49,8 @@ class newUsersController extends Controller
     public function store(Request $request)
     {
         
-        $userText =  "u".Str::random(12);
-        $passwordText =  "p".Str::random(12);
+        $userText =  "u".Str::random(5);
+        $passwordText =  "p".Str::random(7);
         $emailText =  $userText."@CallCredit.com";
 
         DB::table('users')->insert([
