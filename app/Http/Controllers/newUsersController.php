@@ -31,7 +31,7 @@ class newUsersController extends Controller
         ->where('status_login',NULL)
         ->where('username', 'like', "$search%")
         ->orderBy('id','DESC')
-        ->paginate(2);
+        ->paginate(50);
         
         $data2 = DB::table('users')
         ->where('status',0)
