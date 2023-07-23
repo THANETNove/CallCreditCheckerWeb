@@ -22,11 +22,27 @@
                         <div class="card-body p-4">
                             <h5 class="card-title fw-semibold mb-4">Recent Transactions</h5>
                             <div class="row">
-                                <a href="{{url('/add-user')}}" class="btn btn-primary mb-4  col-4 col-md-1">
+                                <a href="{{url('/add-user',1)}}" class="btn btn-primary mb-4  col-4 col-md-1">
                                     <i class="ti ti-user-plus"></i>
+                                    <br><span> 1 เดือน</span>
+                                </a>
+                                &nbsp;
+                                <a href="{{url('/add-user',3)}}" class="btn btn-primary mb-4   col-4 col-md-1">
+                                    <i class="ti ti-user-plus"></i>
+                                    <br><span> 3 เดือน</span>
+                                </a>
+                                &nbsp;
+                                <a href="{{url('/add-user',6)}}" class="btn btn-primary mb-4   col-4 col-md-1">
+                                    <i class="ti ti-user-plus"></i>
+                                    <br><span> 6 เดือน</span>
+                                </a>
+                                &nbsp;
+                                <a href="{{url('/add-user',365)}}" class="btn btn-primary mb-4   col-4 col-md-1">
+                                    <i class="ti ti-user-plus"></i>
+                                    <br><span> 1 ปี</span>
                                 </a>
                                 @if (session('message'))
-                                <p class="col-4 add-name" id="add-name">{{ session('message') }}</p>
+                                <p class="col-4 add-name " id="add-name">{{ session('message') }}</p>
                                 @endif
                                 <p class="col-4 add-name" id="add-copy"></p>
                             </div>
@@ -44,6 +60,9 @@
                                             </th>
                                             <th class="border-bottom-0">
                                                 <h6 class="fw-semibold mb-0">Password</h6>
+                                            </th>
+                                            <th class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">จำนวนวัน</h6>
                                             </th>
                                             <th class="border-bottom-0">
                                                 <h6 class="fw-semibold mb-0">delete</h6>
@@ -69,6 +88,11 @@
                                                 <p class="mb-0 fw-normal">{{$dataUser->password}} &nbsp;
                                                     <span class="copy-btn"
                                                         data-text="{{$dataUser->password}}">คัดลอก</span>
+                                                </p>
+
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">{{$dataUser->number_days}}
                                                 </p>
 
                                             </td>
@@ -115,6 +139,9 @@
                                 <h6 class="fw-semibold mb-0">Password</h6>
                             </th>
                             <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">จำนวนวัน</h6>
+                            </th>
+                            <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">สถานะ</h6>
                             </th>
                         </tr>
@@ -134,6 +161,11 @@
                             </td>
                             <td class="border-bottom-0">
                                 <p class="mb-0 fw-normal">{{$dataUser2->password}}
+                                </p>
+
+                            </td>
+                            <td class="border-bottom-0">
+                                <p class="mb-0 fw-normal">{{$dataUser->number_days}}
                                 </p>
 
                             </td>

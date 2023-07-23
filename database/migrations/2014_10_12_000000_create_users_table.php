@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('status')->nullable();
             $table->string('status_login')->nullable();
+            $table->string('number_days')->nullable();
+            $table->string('expiration_date')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

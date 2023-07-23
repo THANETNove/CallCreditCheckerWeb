@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 use DB;
 
 
@@ -46,8 +47,25 @@ class newUsersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,string $id)
     {
+        $currentDateTime = now();
+        $formattedDateTime = Carbon::parse($currentDateTime)->format('d-m-Y H:i:s');
+
+        if ($id == 1) {
+            $numberDays = "1 เดือน";
+            $newDateTime = Carbon::parse($currentDateTime)->addMonth();
+        }elseif ($id == 3) {
+            $numberDays = "3 เดือน";
+            $newDateTime = Carbon::parse($currentDateTime)->addMonths(3);
+        }elseif ($id == 6) {
+            $numberDays = "6 เดือน";
+            $newDateTime = Carbon::parse($currentDateTime)->addMonths(6);
+        }else{
+            $numberDays = "1 ปี";
+            $newDateTime = Carbon::parse($currentDateTime)->addYear();
+        }
+      
         
         $userText =  "u".Str::random(5);
         $passwordText =  "p".Str::random(7);
@@ -58,6 +76,8 @@ class newUsersController extends Controller
             'email' => $emailText,
             'status' => "0",
             'status_login' => NULL,
+            'number_days' => $numberDays,
+            'expiration_date' => $newDateTime,
             'password' => $passwordText,
         ]);
 
